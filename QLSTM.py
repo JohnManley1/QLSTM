@@ -128,7 +128,7 @@ class QLSTM(nn.Module):
             for i in range(self.n_qubits):
                 qml.Hadamard(wires=wires_type[i])
                 qml.RY(ry_params[i], wires=wires_type[i])
-                qml.RZ(ry_params[i], wires=wires_type[i])
+                qml.RZ(rz_params[i], wires=wires_type[i])
 
             # Variational block.
             qml.layer(ansatz, self.n_qlayers, weights, wires_type=wires_type)
